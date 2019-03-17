@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/gameobjects/cogu/cogu.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="cogu" parent="." instance=ExtResource( 1 )]
+position = Vector2( 479.97, 324.604 )
+

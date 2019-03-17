@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="select_stage_screen" type="Node2D"]
+

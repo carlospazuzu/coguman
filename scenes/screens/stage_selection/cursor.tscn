@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/screens/stage_selection/cursor.gd" type="Script" id=1]
+[ext_resource path="res://assets/stage_selection/cursor-1.png" type="Texture" id=2]
+[ext_resource path="res://assets/stage_selection/cursor-2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sound/sfx/menu_cursor.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[node name="cursor" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="cursor_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -11.0
+
+[connection signal="cursor_has_just_moved" from="." to="." method="_on_cursor_cursor_has_just_moved"]
